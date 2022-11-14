@@ -190,10 +190,11 @@ module.exports = function (webpackEnv) {
     target: ["browserslist"],
     // Webpack noise constrained to errors and warnings
     stats: "errors-warnings",
-    mode: isEnvProduction ? "production" : isEnvDevelopment && "development",
+    mode: "production",
     // Stop compilation early in production
     bail: isEnvProduction,
-    devtool: isEnvProduction ? "source-map" : "cheap-module-source-map",
+    devtool: false,
+    // devtool: "source-map",
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
     entry: paths.appIndexJs,
